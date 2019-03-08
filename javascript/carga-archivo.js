@@ -5,8 +5,26 @@ $(document).ready(function () {
 
 
     function obtenerCatedratico(evt) {
-        var file = evt.target.files[0];
 
+            var archivo = evt.target.files[0];
+            if (!archivo) {
+              return;
+            }
+
+            var lector = new FileReader();
+            lector.onload = function(e) {
+                const lines = lector.result.split('\n').map(
+                    function (line) {
+                        return line.split(',');   
+                    }
+             );
+
+             console.log(lines);
+            };
+            lector.readAsText(archivo);
+          
+
+                /*
         console.log(evt.target.files);
 
          var archivoRuta  = evt.target.value;
@@ -18,7 +36,12 @@ $(document).ready(function () {
              return false;
          }
   
-         
+         var TmpPath = URL.createObjectURL(evt.target.files[0]);
+
+        console.log(TmpPath);
+        console.log(evt.target.files[0].mozFullPath);
+
+         /*
          var reader  = new FileReader();
          reader.readAsText(file);  
          console.log(reader.result);
@@ -29,18 +52,16 @@ $(document).ready(function () {
                 }
          );
 
-          console.log(lines);
-
-
-     
-
-
-
-
-
         
+         console.log(lines);*/
       
     }
+
+    function mostrarContenido(contenido) {
+        var elemento = document.getElementById('contenido');
+        elemento.innerHTML = contenido;
+      }
+    
 
 
 });
