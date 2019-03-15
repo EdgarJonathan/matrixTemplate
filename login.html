@@ -19,6 +19,9 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
+
 </head>
 
 <body>
@@ -50,15 +53,19 @@
                             <div class="col-12">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
+                                        <span class="input-group-text bg-success text-white" id="basic-addon1"><i
+                                                class="ti-user"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="Username" aria-label="Username" id="nombre" aria-describedby="basic-addon1" required="">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Username"
+                                        aria-label="Username" id="nombre" aria-describedby="basic-addon1" required="">
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
+                                        <span class="input-group-text bg-warning text-white" id="basic-addon2"><i
+                                                class="ti-pencil"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="Password" aria-label="Password" id="contra" aria-describedby="basic-addon1" required="">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Password"
+                                        aria-label="Password" id="contra" aria-describedby="basic-addon1" required="">
                                 </div>
                             </div>
                         </div>
@@ -66,8 +73,10 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <div class="p-t-20">
-                                        <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock m-r-5"></i> Lost password?</button>
-                                        <button class="btn btn-success float-right"  id="enviar"  type="submit">Login</button>
+                                        <button class="btn btn-info" id="to-recover" type="button"><i
+                                                class="fa fa-lock m-r-5"></i> Lost password?</button>
+                                        <button class="btn btn-success float-right" id="enviar"
+                                            type="submit">Login</button>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +85,8 @@
                 </div>
                 <div id="recoverform">
                     <div class="text-center">
-                        <span class="text-white">Enter your e-mail address below and we will send you instructions how to recover a password.</span>
+                        <span class="text-white">Enter your e-mail address below and we will send you instructions how
+                            to recover a password.</span>
                     </div>
                     <div class="row m-t-20">
                         <!-- Form -->
@@ -84,15 +94,18 @@
                             <!-- email -->
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
+                                    <span class="input-group-text bg-danger text-white" id="basic-addon1"><i
+                                            class="ti-email"></i></span>
                                 </div>
-                                <input type="text" class="form-control form-control-lg" placeholder="Email Address" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control form-control-lg" placeholder="Email Address"
+                                    aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                             <!-- pwd -->
                             <div class="row m-t-20 p-t-20 border-top border-secondary">
                                 <div class="col-12">
                                     <a class="btn btn-success" href="#" id="to-login" name="action">Back To Login</a>
-                                    <button class="btn btn-info float-right" type="button" name="action">Recover</button>
+                                    <button class="btn btn-info float-right" type="button"
+                                        name="action">Recover</button>
                                 </div>
                             </div>
                         </form>
@@ -128,63 +141,54 @@
     <!-- ============================================================== -->
     <script>
 
-    $('[data-toggle="tooltip"]').tooltip();
-    $(".preloader").fadeOut();
-    // ==============================================================
-    // Login and Recover Password
-    // ==============================================================
-    $('#to-recover').on("click", function() {
-        $("#loginform").slideUp();
-        $("#recoverform").fadeIn();
-    });
-    $('#to-login').click(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+        $(".preloader").fadeOut();
+        // ==============================================================
+        // Login and Recover Password
+        // ==============================================================
+        $('#to-recover').on("click", function () {
+            $("#loginform").slideUp();
+            $("#recoverform").fadeIn();
+        });
+        $('#to-login').click(function () {
 
-        $("#recoverform").hide();
-        $("#loginform").fadeIn();
-    });
+            $("#recoverform").hide();
+            $("#loginform").fadeIn();
+        });
     </script>
 
 </body>
 
-    <script>
+<script>
 
-        document.getElementById("enviar").addEventListener("click",peticion,false);
+    document.getElementById("enviar").addEventListener("click", peticion, false);
 
-        function peticion(){
+    function peticion() {
 
-           // var nombre=document.getElementById("nombre").value();
-            //var contra=document.getElementById("contra").value();
 
-            var nombre="admin";
-            var contra="admin45";
 
-            var enviar ='{"user":{"nombre":"'+nombre+'", "contra": "'+contra+'"}}';
 
-            var xhr = new XMLHttpRequest();
-        xhr.open("POST"," http://localhost:9098/prueba/contra", true);
-        xhr.setRequestHeader('Content-Type','application/json');
-        xhr.onreadystatechange =function () {
 
-          if(xhr.readyState ==4 && xhr.status ==200){
-              var result =JSON.parse(xhr.responseText);
+        var nombre = $("#nombre").val();
+        var contra = $("#contra").val();
 
-              if(result.result == 'true'){
-                  alert("contrasena correcta");
 
-              }else{
-                alert("contrasena incorrecta");
+        if ((nombre == "201602633") && (contra == "201602633")) {
 
-              }
-            }
-          }
+            
+            /*setTimeout(function () {
+                window.locationf = "http://127.0.0.1:8080/principal.html";
+            }, 2000);*/
 
-          xhr.send(enviar);
+        } else {
 
+            alert("datos incorrectos");
         }
+    }
 
-        
 
-    </script>
+
+</script>
 
 
 

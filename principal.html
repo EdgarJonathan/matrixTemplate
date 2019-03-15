@@ -14,13 +14,16 @@
     <!-- Custom CSS -->
     <link href="../../assets/libs/flot/css/float-chart.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <link href="../../dist/css/style.min.css" rel="stylesheet"> 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+   <![endif]--> 
+    <link href="../../assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -333,7 +336,7 @@
                     <!-- Column -->
                     <div class="col-md-6 col-lg-4 col-xlg-3">
                         <div class="card card-hover">
-                            <div class="box bg-info text-center">
+                            <div class="box bg-info text-center" id="btnCatedratico" >
                                 <h1 class="font-light text-white"><i class="mdi mdi-account-multiple"></i></h1>
                                 <h6 class="text-white">Catedraticos</h6>
                             </div>
@@ -351,7 +354,7 @@
                     <!-- Column -->
                     <div class="col-md-6 col-lg-8 col-xlg-3">
                         <div class="card card-hover">
-                            <div class="box bg-success text-center"  >
+                            <div class="box bg-success text-center" id="prueba" >
                                 <h1 class="font-light text-white"><i class="mdi mdi-calendar-check"></i></h1>
                                 <h6 class="text-white">Calendario</h6>
                             </div>
@@ -447,20 +450,10 @@
     <script src="../../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="../../dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
-    <!-- Charts js Files -->
-    <script src="../../assets/libs/flot/excanvas.js"></script>
-    <script src="../../assets/libs/flot/jquery.flot.js"></script>
-    <script src="../../assets/libs/flot/jquery.flot.pie.js"></script>
-    <script src="../../assets/libs/flot/jquery.flot.time.js"></script>
-    <script src="../../assets/libs/flot/jquery.flot.stack.js"></script>
-    <script src="../../assets/libs/flot/jquery.flot.crosshair.js"></script>
-    <script src="../../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-    <script src="../../dist/js/pages/chart/chart-page-init.js"></script>
+
      <!-- programacion proyecto1-->
+     <script src="../../assets/libs/toastr/build/toastr.min.js"></script>
      <script src="javascript/carga-archivo.js"></script>
 
 </body>
-
 </html>
