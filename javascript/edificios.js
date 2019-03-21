@@ -4,7 +4,7 @@ window.nombreCatedratico;
 window.onload = function () { getArbol(); }
 
 function getArbol() {
-    $.get("http://localhost:9098/backend/getArbol",
+    $.get("http://localhost:9098/backend/getEdificios",
         function (data) {
 
             if(data.result[0].id =="NULL")
@@ -25,17 +25,11 @@ function cargarTabla(listaCatedratico) {
 
     listaCatedratico.map(function (cat) {
         i++;
-        /* cadena += '<tr>';
-         cadena += '     <th scope="row">' + i + '</th>';
-         cadena += '     <td>' + cat.id + '</td>';
-         cadena += '     <td>' + cat.nombre + '</td>';
-         cadena += '</tr>';*/
-
         //loop through ajax row data
         tbl += '<tr>';
-        tbl += '<td ><div class="row_data"  col_name="num">' + i + '</div></td>';
-        tbl += '<td ><div class="row_data"  col_name="id">' + cat.id + '</div></td>';
-        tbl += '<td ><div class="row_data" id="nombre" col_name="nombre">' + cat.nombre + '</div></td>';
+        tbl += '<td ><div class="row_data"  col_name="edificio">' + cat.edificio + '</div></td>';
+        tbl += '<td ><div class="row_data" id="nombre"  col_name="no_salon">' + cat.no_salon + '</div></td>';
+        tbl += '<td ><div class="row_data" col_name="capacidad">' + cat.capacidad + '</div></td>';
 
         //--->edit options > start
         tbl += '<td>';
@@ -151,8 +145,8 @@ $(document).ready(function () {
         //funcion modificar catedratico
         console.log(arr.id);
         console.log(arr.nombre);
-        enviar ='{"cat":{"id":"'+arr.id+'","nombre": "'+arr.nombre+'"} }';
-        editar(enviar);
+       /* enviar ='{"cat":{"id":"'+arr.id+'","nombre": "'+arr.nombre+'"} }';
+        editar(enviar);*/
 
 
     });
@@ -176,10 +170,10 @@ $(document).ready(function () {
         console.log("estamos en delete" + arr.id);
         console.log(arr.nombre);
 
-        enviar ='{"cat":{"id":"'+arr.id+'","nombre": "'+arr.nombre+'"} }';
+        /*enviar ='{"cat":{"id":"'+arr.id+'","nombre": "'+arr.nombre+'"} }';
         eliminar(enviar);
 
-
+        */
     });
 
     
@@ -191,52 +185,12 @@ $(document).ready(function () {
 
 
 function editar(cat) {
-    jQuery.ajax({
-        url: "http://localhost:9098/backend/editarCatedratico",
-        type: "POST",
-        data: cat,
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        success: function (data) {
-            console.log(data);
-            if (data.result == "true") {
-                // Success Type
-            
-                toastr.success('Se edito correctamente', 'Action completada');
-            } else {
-                // Success Type
-
-                toastr.error('No se logro editar', 'Erro');
-
-            }
-        }
-    });
+  
 }
 
 function eliminar(cat) {
 
-    nombreCatedratico = cat.nombre;
 
-    jQuery.ajax({
-        url: "http://localhost:9098/backend/eliminarCatedratico",
-        type: "POST",
-        data: cat,
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        success: function (data) {
-            console.log(data);
-            if (data.result == "true") {
-                // Success Type
-                getArbol();
-                toastr.success(nombreCatedratico, 'Eliminacion Exitosa');
-            } else {
-                // Success Type
-
-                toastr.error('No se logro editar', 'Erro');
-
-            }
-        }
-    });
     
 }
 

@@ -23,10 +23,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]--> 
     <!--Tema -->
-
     <link href="../../assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
-
-   
 
 </head>
 
@@ -126,21 +123,22 @@
                                 <i class="mdi mdi-view-dashboard"></i><span
                                 class="hide-menu">principal</span></a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="edificios.html"
-                                aria-expanded="false">
-                                <i class="mdi mdi-view-dashboard">
-                                </i>
-                                <span class="hide-menu">edificios
-                                </span>
-                            </a>
-                    </li>
+            
                     <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="cursos.html"
                                 aria-expanded="false">
                                 <i class="mdi mdi-view-dashboard">
                                 </i>
                                 <span class="hide-menu">cursos
+                                </span>
+                            </a>
+                    </li>
+                    <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="catedratico.html"
+                                aria-expanded="false">
+                                <i class="mdi mdi-view-dashboard">
+                                </i>
+                                <span class="hide-menu">catedratico
                                 </span>
                             </a>
                     </li>
@@ -153,6 +151,7 @@
                                 </span>
                             </a>
                     </li>
+                   
                         
                     </ul>
                 </nav>
@@ -173,7 +172,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h2 class="page-title">Catedraticos</h2>
+                        <h2 class="page-title">Edificios</h2>
                     </div>
                 </div>
             </div>
@@ -192,9 +191,9 @@
                      <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">id</th>
-                                <th scope="col">Catedratico</th>
+                                <th scope="col">edificio</th>
+                                <th scope="col">salon</th>
+                                <th scope="col">capacidad</th>
                                 <th scope="col">Editar</th>
                                 <th scope="col">Eliminar</th>
                             </tr>
@@ -202,7 +201,6 @@
                         <tbody id="cuerpoTabla">
                            
                         </tbody>
-                      
                     </table>
                 </div>
 
@@ -257,10 +255,10 @@
         <script src="../../assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
         <script src="../../assets/extra-libs/multicheck/jquery.multicheck.js"></script>
         <script src="../../assets/extra-libs/DataTables/datatables.min.js"></script>
-
-        <!--Archivos para este js-->
-        <script src="../../assets/libs/toastr/build/toastr.min.js"></script>
-        <script src="javascript/catedratico.js" type="text/javascript" async="async"></script>
+         <!--Archivos para este js-->
+         <script src="../../assets/libs/toastr/build/toastr.min.js"></script>
+         <script src="javascript/edificios.js"></script>
+    
 </body>
 
 </html>
