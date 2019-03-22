@@ -23,6 +23,7 @@
     <![endif]-->
     <!--Calendario-->
     
+    <link href="../../assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
 
 </head>
 
@@ -472,31 +473,40 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title"><strong>Add</strong> a category</h4>
+                                <h4 class="modal-title"><strong>Agregar curso</h4>
                                 <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true">&times;</button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body">    
                                 <form>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label class="control-label">Category Name</label>
-                                            <input class="form-control form-white" placeholder="Enter name" type="text"
+                                            <label class="control-label">Codigo Curso</label>
+                                            <input class="form-control form-white" placeholder="codigo" type="text"
                                                 name="category-name" />
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="control-label">Choose Category Color</label>
-                                            <select class="form-control form-white" data-placeholder="Choose a color..."
-                                                name="category-color">
-                                                <option value="success">Success</option>
-                                                <option value="danger">Danger</option>
-                                                <option value="info">Info</option>
-                                                <option value="primary">Primary</option>
-                                                <option value="warning">Warning</option>
-                                                <option value="inverse">Inverse</option>
-                                            </select>
-                                        </div>
+                                                <label class="control-label">Nombre</label>
+                                                <input class="form-control form-white" placeholder="nombre" type="text"
+                                                    name="category-name" />
+                                            </div>
+                                       
                                     </div>
+                                    <div class="row">
+                                            <div class="col-md-6">
+                                                    <label class="control-label">Catedraticos</label>
+                                                    <select id="addCatedraticos" class="form-control form-white" data-placeholder="Choose a color..."
+                                                        name="category-color">
+                                                        <option value="success">Success</option>
+                                                        <option value="danger">Danger</option>
+                                                        <option value="info">Info</option>
+                                                        <option value="primary">Primary</option>
+                                                        <option value="warning">Warning</option>
+                                                        <option value="inverse">Inverse</option>
+                                                    </select>
+                                                </div>
+                                    </div>
+
                                 </form>
                             </div>
                             <div class="modal-footer">
@@ -565,6 +575,8 @@
     <script src='packages/timeline/main.js'></script>
     <script src='packages/resource-common/main.js'></script>
     <script src='packages/resource-timeline/main.js'></script>
+
+    <script src="../../assets/libs/toastr/build/toastr.min.js"></script>
     
     <script src="javascript/calendar.js"></script>
 </body>

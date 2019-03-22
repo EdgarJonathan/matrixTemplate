@@ -191,7 +191,7 @@ $(document).ready(function () {
     })
     //-----------------------------------btnCalendario--------------------------------------
     $("#btnCalendar").on("click", function () {
-        var url = "#";
+        var url = "calendar.html";
         $(location).attr('href', url);
     })
 
